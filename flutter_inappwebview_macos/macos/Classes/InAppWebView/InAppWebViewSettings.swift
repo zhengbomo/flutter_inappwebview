@@ -32,7 +32,7 @@ public class InAppWebViewSettings: ISettings<InAppWebView> {
     var incognito = false
     var cacheEnabled = true
     var transparentBackground = false
-    var drawsBackground: Bool?
+    var drawsBackground = true
     var supportZoom = true
     var allowUniversalAccessFromFileURLs = false
     var allowFileAccessFromFileURLs = false
