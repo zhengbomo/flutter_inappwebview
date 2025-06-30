@@ -82,6 +82,10 @@ class InAppWebViewSettings_ {
       platforms: [AndroidPlatform(), IOSPlatform(), MacOSPlatform()])
   bool? clearCache;
 
+  ///Sets whether the WebView should draw its background. default is true.
+  @SupportedPlatforms(platforms: [MacOSPlatform()])
+  bool? drawsBackground;
+
   ///Sets the user-agent for the WebView.
   @SupportedPlatforms(platforms: [
     AndroidPlatform(
@@ -2104,6 +2108,7 @@ as it can cause framerate drops on animations in Android 9 and lower (see [Hybri
     this.useShouldOverrideUrlLoading,
     this.useOnLoadResource,
     this.useOnDownloadStart,
+    this.drawsBackground,
     @Deprecated("Use InAppWebViewController.clearAllCache instead")
     this.clearCache = false,
     this.userAgent = "",
