@@ -127,8 +127,8 @@ public class InAppWebView: WKWebView, WKUIDelegate,
                 alphaValue = CGFloat(viewAlpha)
             }
             
-            if let value = obj?.value(forKey: "drawsBackground") {
-                realSettings["drawsBackground"] = value
+            if let value = settings.drawsBackground {
+                self.setValue(false, forKey: "drawsBackground")
             }
             javaScriptBridgeEnabled = settings.javaScriptBridgeEnabled
             if let javaScriptBridgeOriginAllowList = settings.javaScriptBridgeOriginAllowList, javaScriptBridgeOriginAllowList.isEmpty {
