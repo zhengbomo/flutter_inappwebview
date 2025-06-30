@@ -32,6 +32,7 @@ public class InAppWebViewSettings: ISettings<InAppWebView> {
     var incognito = false
     var cacheEnabled = true
     var transparentBackground = false
+    var drawsBackground: Bool?
     var supportZoom = true
     var allowUniversalAccessFromFileURLs = false
     var allowFileAccessFromFileURLs = false
@@ -106,6 +107,10 @@ public class InAppWebViewSettings: ISettings<InAppWebView> {
             realSettings["allowUniversalAccessFromFileURLs"] = configuration.value(forKey: "allowUniversalAccessFromFileURLs") as? Bool
             realSettings["allowFileAccessFromFileURLs"] = configuration.preferences.value(forKey: "allowFileAccessFromFileURLs") as? Bool
             realSettings["javaScriptEnabled"] = configuration.preferences.javaScriptEnabled
+            
+            if let value = obj?.value(forKey: "drawsBackground") {
+                realSettings["drawsBackground"] = value
+            }
             if #available(macOS 11.0, *) {
                 realSettings["mediaType"] = webView.mediaType
                 realSettings["pageZoom"] = Float(webView.pageZoom)
