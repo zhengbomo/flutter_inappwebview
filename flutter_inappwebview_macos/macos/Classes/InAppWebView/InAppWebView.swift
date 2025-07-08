@@ -135,6 +135,7 @@ public class InAppWebView: WKWebView, WKUIDelegate,
             
             if #available(macOS 12.0, *), settings.transparentBackground {
                 underPageBackgroundColor = .clear
+                setValue(false, forKey: "drawsBackground")
             }
         
             allowsBackForwardNavigationGestures = settings.allowsBackForwardNavigationGestures
